@@ -44,15 +44,60 @@ PrintArray(twoDimArray);
 // 5 9 2 3
 // 8 4 2 4
 // 17 -> такого числа в массиве нет
- 
 
+Console.WriteLine("Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, и возвращает значение этого элемента или же указание, что такого элемента нет.");
+Console.WriteLine("Задайте количество строк двумерного массива:");
+int strok1 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Задайте количество столбцов двумерного массива:");
+int stolb1 = Convert.ToInt32(Console.ReadLine());
+int[,] NewMassInputs = new int[strok1, stolb1];
+Random NewRandomMass = new Random();
+void PrintNewMassiv(int[,] NewMatrix)
+{ 
+    for (int i = 0; i < strok1; i++)
+    { 
+        for (int j = 0; j < stolb1; j++)
+        { 
+            Console.Write($"{NewMatrix[i, j]} " + "\t");
+        }
+            Console.WriteLine();
+    }
+}
+void GotoviMassiv(int[,] NewMatrix)
+
+{ 
+    for (int i = 0; i < strok1; i++)
+    { 
+        for (int j = 0; j < stolb1; j++)
+        { 
+            NewMatrix[i,j] = Convert.ToInt32(NewRandomMass.Next(0, 100));
+        }
+    }
+}
 Console.WriteLine();
-Console.WriteLine("Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце."); //Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
-// Например, задан массив:
-// 1 4 7 2
-// 5 9 2 3
-// 8 4 2 4
-// Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
+GotoviMassiv(NewMassInputs);
+Console.WriteLine();
+PrintNewMassiv(NewMassInputs);
+Console.WriteLine();
+Console.WriteLine("Введите позицию двумерного массива: ");
+ int a = Convert.ToInt32(Console.ReadLine());
+ int b = Convert.ToInt32(Console.ReadLine());
+    if (a>strok1 && b>stolb1)
+ Console.WriteLine("такого числа нет");
+    else
+ {
+    object c = NewMassInputs.GetValue(a,b);
+    Console.WriteLine(c);
+ }
+Console.WriteLine();
+
+
+// Console.WriteLine("Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце."); //Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
+// // Например, задан массив:
+// // 1 4 7 2
+// // 5 9 2 3
+// // 8 4 2 4
+// // Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
 Console.WriteLine("Задайте количество строк двумерного массива:");
 int stroka = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Задайте количество столбцов двумерного массива:");
