@@ -82,7 +82,7 @@ Console.WriteLine();
 Console.WriteLine("Введите позицию двумерного массива: ");
  int a = Convert.ToInt32(Console.ReadLine());
  int b = Convert.ToInt32(Console.ReadLine());
-    if (a>strok1 && b>stolb1)
+    if (a>=strok1 || b>=stolb1)
  Console.WriteLine("такого числа нет");
     else
  {
