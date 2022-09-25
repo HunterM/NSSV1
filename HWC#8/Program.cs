@@ -55,7 +55,7 @@ void NewArray(int[,] twoDimArray)
         {
           int temp = twoDimArray[i, k + 1];
           twoDimArray[i, k + 1] = twoDimArray[i, k];
-          twoDimArray[i, k] = temp;
+          twoDimArray[i, k] = t;
         }
       }
     }
