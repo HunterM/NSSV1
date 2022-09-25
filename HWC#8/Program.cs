@@ -53,7 +53,7 @@ void NewArray(int[,] twoDimArray)
       {
         if (twoDimArray[i, k] < twoDimArray[i, k + 1])
         {
-          int temp = twoDimArray[i, k + 1];
+          int t = twoDimArray[i, k + 1];
           twoDimArray[i, k + 1] = twoDimArray[i, k];
           twoDimArray[i, k] = t;
         }
