@@ -53,14 +53,15 @@ void NewArray(int[,] twoDimArray)
       {
         if (twoDimArray[i, k] < twoDimArray[i, k + 1])
         {
-          int t = twoDimArray[i, k + 1];
-          twoDimArray[i, k + 1] = twoDimArray[i, k];
-          twoDimArray[i, k] = t;
+        int t = twoDimArray[i, k + 1];
+        twoDimArray[i, k + 1] = twoDimArray[i, k];
+        twoDimArray[i, k] = t;
         }
       }
     }
   }
 }
+
 
 FillArray(twoDimArray);
 Console.WriteLine();
@@ -69,7 +70,7 @@ Console.WriteLine();
 
 Console.WriteLine($"\n"+"Отсортированный массив: ");
 NewArray(twoDimArray);
-FillArray(twoDimArray);
+PrintArray(twoDimArray);
 
 
 // Задача 56: Задайте прямоугольный двумерный массив. Напишите программу, которая будет находить строку с наименьшей суммой элементов.
