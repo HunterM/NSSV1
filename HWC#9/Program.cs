@@ -22,38 +22,68 @@
 // M = 1; N = 15 -> 120
 // M = 4; N = 8. -> 30
 
-int InputNumber(string input)
-{
-     Console.Write(input);
-    int output = Convert.ToInt32(Console.ReadLine());
-    return output;
- }
+// int InputNumber(string input)
+// {
+//      Console.Write(input);
+//     int output = Convert.ToInt32(Console.ReadLine());
+//     return output;
+//  }
 
- void PrintSum(int m, int n, int sum)
- {
-     sum = sum + n;
-     if (n <= m)
-    {
-         Console.Write($" {sum} ");
-         return;
-     }
-     PrintSum(m, n - 1, sum);
+//  void PrintSum(int m, int n, int sum)
+//  {
+//      sum = sum + n;
+//      if (n <= m)
+//     {
+//          Console.Write($" {sum} ");
+//          return;
+//      }
+//      PrintSum(m, n - 1, sum);
 
- }
- int m = InputNumber("Введите число М: ");
- int n = InputNumber("Введите число N: ");
- int temp = m;
+//  }
+//  int m = InputNumber("Введите число М: ");
+//  int n = InputNumber("Введите число N: ");
+//  int temp = m;
 
- if (m > n)
- {
-     m = n;
-     n = temp;
- }
- Console.Write($"{m}, {n} ->");
- PrintSum(m, n, temp = 0);
+//  if (m > n)
+//  {
+//      m = n;
+//      n = temp;
+//  }
+//  Console.Write($"Сумма элементов между {m} и {n} равна: ");
+//  PrintSum(m, n, temp = 0);
 
 
 
 // Задача 68: Напишите программу вычисления функции Аккермана с помощью рекурсии. Даны два неотрицательных числа m и n.
 // m = 2, n = 3 -> A(m,n) = 9
 // m = 3, n = 2 -> A(m,n) = 29
+
+int InputNumber(string input)
+{
+    Console.Write(input);
+    int output = Convert.ToInt32(Console.ReadLine());
+    return output;
+}
+int Akkerman(int m, int n)
+{
+    if (m == 0)
+    {
+        return n + 1;
+    }
+    else if (n == 0 && m > 0)
+    {
+        return Akkerman(m - 1, 1);
+    }
+    else
+    {
+        return Akkerman(m - 1, Akkerman(m, n - 1));
+    }
+}
+
+int m = InputNumber("Введите число m: ");
+Console.WriteLine();
+int n = InputNumber("Введите число n: ");
+Console.WriteLine();
+int akkermanFunction = Akkerman(m, n);
+Console.Write($"При m = {m} и  n = {n} вычисления функции Аккермана А(m,n) = {akkermanFunction} ");
+Console.WriteLine();
